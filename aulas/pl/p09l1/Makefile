@@ -1,9 +1,9 @@
 PROGRAMS=p09l1-01 p09l1-02 p09l1-02a p09l1-02b
 MODULES=
 AS=as
-ASFLAGS=
+ASFLAGS=-g
 GCC=gcc
-GCCFLAGS="-nostdlib"
+GCCFLAGS=-nostdlib
 
 all: ${PROGRAMS} ${MODULES}
 
@@ -30,11 +30,15 @@ p09l1-02.o: p09l1-02.S
 p09l1-02a.o: p09l1-02a.S
 	${AS} p09l1-02a.S -o p09l1-02a.o ${ASFLAGS}
 
-p09l1-02b.o: p09l1-02b.S
+p09l1-02b.o: p09l1-02b.S macros.S
 	${AS} p09l1-02b.S -o p09l1-02b.o ${ASFLAGS}
 
 functions.o: functions.S
 	${AS} functions.S -o functions.o ${ASFLAGS}
 
 clean:
-	rm -v ${PROGRAMS} *.o
+	@echo Removing programs and object files
+	@rm -v ${PROGRAMS} *.o
+
+rebuild: clean all
+	@echo Programs rebuilded
