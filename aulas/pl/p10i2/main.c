@@ -1,7 +1,9 @@
 #include <stdio.h>
 
-int addasm(int, int);
-void showasm(void);
+#include "asmfunc.h"
+
+//int addasm(int, int);
+//void showasm(void);
 
 int main()
 {

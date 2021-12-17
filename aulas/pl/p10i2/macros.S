@@ -1,16 +1,23 @@
 @macros
 
-@push macro
+@call macro---------------------------------------------------------------------
+.macro	call address
+		push lr
+		bl  \address
+		pop lr
+.endm
+
+@push macro---------------------------------------------------------------------
 .macro	push reg
 		str \reg, [sp, #-1*4]!
 .endm
 
-@pop macro
+@pop macro----------------------------------------------------------------------
 .macro	pop reg
 		ldr \reg, [sp], #+1*4
 .endm
 
-@pushfuncregs macro
+@pushfuncregs macro-------------------------------------------------------------
 .macro	pushfuncregs
 		push lr
 		push r11
@@ -23,7 +30,7 @@
 		push r4
 .endm
 
-@popfuncregs macro
+@popfuncregs macro--------------------------------------------------------------
 .macro	popfuncregs
 		pop r4
 		pop r5

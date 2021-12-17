@@ -6,8 +6,8 @@
 .global		addasm, showasm			@export the labels for the C program
 
 @.p2align 	2
-.type    	showasm,%function
-.type    	addasm,%function
+.type    	showasm, %function
+.type    	addasm, %function
 	 
 @.section	.text
 @code----------------------------------------------------------------------------~
@@ -17,7 +17,7 @@ addasm:		add r0, r0, r1			@R0 with variable a valu and R1 with b. Returm value i
 			bx lr					@returnt to C code
 
 showasm:
-@			pushfuncregs			@preserver R4-R11 and LR
+@			pushfuncregs			@preserve R4-R11 and LR
 			push r7
 
 			mov r7, #OS_WRITE
@@ -27,7 +27,7 @@ showasm:
 			swi 0
 			
 			pop r7
-@			popfuncregs				@preserver R4-R11 and LR
+@			popfuncregs				@preserve R4-R11 and LR
 			bx lr					@return to C code
 .fnend
 

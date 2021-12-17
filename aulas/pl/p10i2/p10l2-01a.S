@@ -3,9 +3,9 @@
 .include	"equs.S"
 .include	"macros.S"
 
-.global		_start					@export the label for the programa entry
+.global		_start
 
-.section	.text					@section .text for the code
+.section	.text
 @program entry------------------------------------------------------------------
 _start:		mov r7, #OS_WRITE
 			mov r0, #OS_STDOUT
@@ -13,18 +13,19 @@ _start:		mov r7, #OS_WRITE
 			mov r2, #21				@R2 with message length
 			swi 0
 			
-@			str lr, [sp, #-1*4]!	@presere LR in stack
-			push lr
-			bl cfunction			@call the cfunction in C
-			pop lr
+@			str lr, [sp, #-1*4]!	@preserve LR in stack
+@			push lr
+@			bl cfunction			@call the cfunction in C
+@			pop lr
 @			ldr lr, [sp], #+1*4		@restore LR from stack
+			call cfunction
 
 exit:		mov r7, #OS_EXIT
 			mov r0, #NORMAL
 			swi 0
 
 @data---------------------------------------------------------------------------
-.section	.data					@section .data for the data/variables
+.section	.data
 msg:		.ascii "This is the assembly\n"
 
-.end								@end not mandatory, can be omitted, next needed ti avoid as warning			
+.end
