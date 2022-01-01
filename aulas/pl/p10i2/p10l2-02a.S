@@ -14,7 +14,8 @@
 .fnstart
 addasm:		add r0, r0, r1			@R0 with variable a valu and R1 with b. Returm value is in R0
 
-			bx lr					@returnt to C code
+@			bx lr					@return to C code
+			return
 
 showasm:
 @			pushfuncregs			@preserve R4-R11 and LR
@@ -28,7 +29,8 @@ showasm:
 			
 			pop r7
 @			popfuncregs				@preserve R4-R11 and LR
-			bx lr					@return to C code
+@			bx lr					@return to C code
+			return
 .fnend
 
 @data---------------------------------------------------------------------------

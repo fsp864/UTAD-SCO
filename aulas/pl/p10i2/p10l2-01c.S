@@ -17,7 +17,7 @@ _start:		mov R0, #VALOR1			@ a_r0 with R0
 			@pop lr					@not needed
 			call cadd
 
-			mov r3, r0				@save return value frpm cadd in R1
+			mov r3, r0				@save return value frpm cadd in R3
 			mov r1, #VALOR1
 			mov r2, #VALOR2
 			ldr r0, =sformat		@printf arg 0 in r0 (formatting string)
