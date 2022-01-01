@@ -11,13 +11,14 @@
 	 
 @.section	.text
 @code----------------------------------------------------------------------------~
-.fnstart
-addasm:		add r0, r0, r1			@R0 with variable a valu and R1 with b. Returm value is in R0
+addasm:		.fnstart
+			add r0, r0, r1			@R0 with variable a valu and R1 with b. Returm value is in R0
 
 @			bx lr					@return to C code
 			return
+			.fnend
 
-showasm:
+showasm:	.fnstart
 @			pushfuncregs			@preserve R4-R11 and LR
 			push r7
 
@@ -31,7 +32,7 @@ showasm:
 @			popfuncregs				@preserve R4-R11 and LR
 @			bx lr					@return to C code
 			return
-.fnend
+			.fnend
 
 @data---------------------------------------------------------------------------
 .section	.data
