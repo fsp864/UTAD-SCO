@@ -12,12 +12,7 @@
 @.section	.text
 @code----------------------------------------------------------------------------~
 addasm:		.fnstart
-<<<<<<< HEAD:aulas/pl/p10i2/p10l2-02a.S
 			add r0, r0, r1			@R0 with variable a value and R1 with b. Return value is in R0
-=======
-			add r0, r0, r1			@R0 with variable a valu and R1 with b. Returm value is in R0
-
->>>>>>> 7b091d214f2a08884feee7ef0405823dd324a427:aulas/pl/p10l2/p10l2-02a.S
 @			bx lr					@return to C code
 			return
 			.fnend
