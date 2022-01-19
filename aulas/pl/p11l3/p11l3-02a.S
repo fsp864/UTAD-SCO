@@ -48,7 +48,10 @@ factorial:	.fnstart
 			bl factorial
 factend:	mov r1, r0
 			ldmfd sp!, {r0}			@restore r0 from stack
-			mul r0, r0, r1
+@			mul r0, r0, r1			@destination / source 1 must be diferente
+			mul r0, r1, r0			@R0 = (n - 1)! * n
+@			mul r2, r1, r0			@R2 = (n-1)! * n
+@			mov r0, r2				@return  n! in R0
 			ldmfd sp!, {pc}			@pop pc (lr) from stack
 			.fnend
 
