@@ -1,3 +1,4 @@
+;test fot hex2str in VisUAL Emulator
 start	adr		r2, value
 		ldr		r0, [r2]
 		
