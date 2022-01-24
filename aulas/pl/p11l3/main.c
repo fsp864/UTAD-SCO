@@ -9,7 +9,7 @@ int main()
 {
   int a = 10, b = 5, n = 3;
 //  int point[3];
-  struct Point3D point;
+  struct Point3D point; // [.Xcoord][.Ycoord][.Zcoord]
 
   puts("This is the C code...");
 
