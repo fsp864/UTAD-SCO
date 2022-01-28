@@ -1,1 +1,1 @@
-Links provided in Classes and Laboratory   
+Links provided in Lectures and Laboratory   
