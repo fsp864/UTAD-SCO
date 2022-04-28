@@ -1,6 +1,6 @@
 NELEM		equ		10			;number of elements
 ZEROS		fill	1*4
-VECTOR		dcd		10, 0, 12, 13, 14, 0, 10, 17, 0, 19	;sum is 145 or 0x91
+VECTOR		dcd		10, 0, 12, 13, 14, 0, 10, 17, 0, 19	;3 zeros
 		
 START		ldr		r2, =VECTOR	;put address VECTOR in r2 (= for address not immediate value)
 			mov		r1, #0		;count from 0 to N-1
@@ -12,7 +12,7 @@ WHILE		cmp		r1, #NELEM	;compare
 			ldr		r3, [r2], #1*4
 IF			cmp		r3, #0
 			bne		ENDIF
-THEN		add		r0, r0, #1	;incrment zeros count
+THEN		add		r0, r0, #1	;increment zeros count
 ENDIF
 			add		r1, r1, #1	;increment counter
 			bal		WHILE		;go to the beginning of WHILE
