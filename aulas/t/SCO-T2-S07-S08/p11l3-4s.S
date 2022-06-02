@@ -15,9 +15,9 @@ add3Ddelta_asm:
 			ldr r5, [r0, #YCOORD]	@get ycoord from point
 			ldr r6, [r0, #ZCOORD]	@get zcoord from point
 
-			add r4, r1				@add dx
-			add r5, r2				@add dy
-			add r6, r3				@add dx
+			add r4, r4, r1			@add dx
+			add r5, r5, r2			@add dy
+			add r6, r6, r3			@add dx
 
 			str r4, [r0, #XCOORD]	@store xcoord in point
 			str r5, [r0, #YCOORD]	@store ycoord in point

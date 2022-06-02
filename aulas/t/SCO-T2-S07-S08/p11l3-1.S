@@ -26,6 +26,6 @@ showasm_values:
 str_format1:	.asciz "ASM: Local C values:\n\tlocal_C_string = %s\n\tlocal_C_int = %d\n"
 str_format2:	.asciz "ASM: Global C values:\n\tglobal_C_string = %s\n\tglobal_C_int = %d\n"
 
-asm_string:		.asciz "This is the assembly sting"
+asm_string:		.asciz "This is the assembly string"
 asm_int:		.word 123
 .end
