@@ -7,18 +7,18 @@
 @code----------------------------------------------------------------------------~
 showasm_values:
 			.fnstart
-
+			push lr
 			mov r2, r1			 	@put local_C_int in R2 was in R1
 			mov r1, r0 				@put local_C_string in R1 was in R0
 			ldr r0, =str_format1
-			call printf
+			bl printf
 
 			ldr r0, =global_C_int
 			ldr r2, [r0]			@ger value from global_C_int address 
 			ldr r1, =global_C_string
 			ldr r0, =str_format2			
-			call printf
-
+			bl printf
+			pop lr
 			return					@return to C code
 			.fnend
 @data---------------------------------------------------------------------------
