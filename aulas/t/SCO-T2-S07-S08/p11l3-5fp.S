@@ -9,8 +9,10 @@ cfunction_asm:
 			.fnstart
 			push lr
 			stmfd sp!, {r0-r2}	@push R0-R2 to stack			
+			mov r2, r1
+			mov r1, r0
 			ldr r0, =msg
-			bl puts
+			bl printf
 			ldmfd sp!, {r0-r2}	@pop R0-R2 from stack
 
 			mov lr, pc  @2 x MOV to do sort of BL R2
@@ -21,6 +23,6 @@ ret_addr:	pop lr
 
 .section	.data
 @code----------------------------------------------------------------------------~
-msg:		.asciz	"ASM: Just calling cadd(R0, R1)"
+msg:		.asciz	"ASM: Just calling cadd(R0 = %d, R1 = %d)\n"
 
 .end

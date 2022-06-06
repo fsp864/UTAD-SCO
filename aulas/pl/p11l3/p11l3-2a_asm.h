@@ -1,0 +1,1 @@
+int vectorsize_asm(int *);

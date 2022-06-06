@@ -1,0 +1,1 @@
+void code_decode_text_asm(char *, char);
